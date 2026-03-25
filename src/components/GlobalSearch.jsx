@@ -31,7 +31,7 @@ export default function GlobalSearch({ onClose }) {
     setLoading(true); setResult(null); setErr('');
     try {
       const r = await api.semanticQuery(query.trim(), mode);
-      setResult({ answer: r.answer, data: r.data, query: query.trim() });
+      setResult({ answer: r.result, data: r.data, query: query.trim() });
     } catch (e) { setErr(e.message); }
     finally { setLoading(false); }
   };
